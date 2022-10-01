@@ -1,0 +1,1 @@
+This is a basic web server written in Go for learning purposes.
