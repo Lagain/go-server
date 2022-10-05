@@ -16,9 +16,11 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
 	name := r.FormValue("name")
 	address := r.FormValue("address")
 	email := r.FormValue("email")
+	phone := r.FormValue("phone")
 	fmt.Fprintf(w, "Name = %s\n", name)
 	fmt.Fprintf(w, "Address = %s\n", address)
 	fmt.Fprintf(w, "Email = %s\n", email)
+	fmt.Fprintf(w, "Phone = %s\n", phone)
 }
 
 // handles /hello with hello func endpoint
@@ -31,7 +33,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "method is not supported", http.StatusNotFound)
 		return
 	}
-	fmt.Fprintf(w, "hello!")
+	fmt.Fprintf(w, "hello, welcome to my test server!")
 }
 
 // handles / with index.html as endpoint, creates a server at port 8080
