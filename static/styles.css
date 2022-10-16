@@ -4,5 +4,11 @@
 }
 
 div {
-    color: aquamarine
+    color: aquamarine;
+    font-weight: 700;
+}
+
+img {
+    height: auto;
+    width: 500px;
 }
