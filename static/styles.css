@@ -4,6 +4,28 @@
     text-shadow: hotpink 1px 1px 0px;
 }
 
+h1 {
+    text-align: center;
+    font-size: 60px;
+}
+
+.container {
+    background: peachpuff;
+    padding: 8px;
+    border: 4px white;
+    gap: 8px;
+    display: flex;
+}
+
+.item {
+    background: white;
+    border: 4px black;
+    height: 48px;
+    flex: 1;
+    padding: 4px;
+    text-align: center;
+}
+
 p {
     font-family: "Courier New", Courier, monospace;
     font-size: 19px;
