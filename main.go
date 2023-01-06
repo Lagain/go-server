@@ -36,12 +36,26 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "hello, welcome to my test server!")
 }
 
+// handles /about with about func endpoint
+func aboutHandler(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/about" {
+		http.Error(w, "404 not found", http.StatusNotFound)
+		return
+	}
+	if r.Method != "GET" {
+		http.Error(w, "method is not supported", http.StatusNotFound)
+		return
+	}
+	fmt.Fprintf(w, "This is going to be an about me page.")
+}
+
 // handles / with index.html as endpoint, creates a server at port 8080
 func main() {
 	fileServer := http.FileServer(http.Dir("./static"))
 	http.Handle("/", fileServer)
 	http.HandleFunc("/form", formHandler)
 	http.HandleFunc("/hello", helloHandler)
+	http.HandleFunc("/about", aboutHandler)
 
 	fmt.Printf("Starting server at port 8080\n")
 	if err := http.ListenAndServe(":8080", nil); err != nil {
